@@ -83,7 +83,22 @@
   text-transform: uppercase;
   color: #ffffff;
 }
-</style>
+</style> /* DESKTOP */
+@media (min-width: 1024px) {
+  .categories-carousel {
+    gap: 24px;
+  }
+
+  .category-card {
+    min-width: 240px;
+    height: 160px;
+  }
+
+  .categories-title {
+    font-size: 28px;
+  }
+}
+
 
 <div class="categories-wrapper">
   <div class="categories-title">Categorias</div>
@@ -173,3 +188,23 @@
 
   </div>
 </div>
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .carousel {
+    gap: 28px;
+  }
+
+  .product-card {
+    width: 300px;
+    padding: 18px;
+  }
+
+  .product-card h3 {
+    font-size: 18px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+}
