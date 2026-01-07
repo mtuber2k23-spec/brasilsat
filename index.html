@@ -1,7 +1,5 @@
 <!-- CARROSSEL DE CATEGORIAS - IMAGEM REAL COM OVERLAY -->
 <style>
-* { box-sizing: border-box; }
-
 .categories-wrapper {
   max-width: 1200px;
   margin: 0 auto 48px;
@@ -86,134 +84,117 @@
   color: #ffffff;
 }
 
-/* ================== AJUSTE DESKTOP - CATEGORIAS ================== */
+/* DESKTOP */
 @media (min-width: 1024px) {
-  .categories-wrapper {
-    max-width: 1400px;
+  .categories-carousel {
+    gap: 24px;
+  }
+
+  .category-card {
+    min-width: 240px;
+    height: 160px;
   }
 
   .categories-title {
     font-size: 28px;
   }
-
-  .categories-carousel {
-    gap: 26px;
-  }
-
-  .category-card {
-    min-width: 260px;
-    height: 170px;
-    padding: 18px;
-  }
-
-  .category-name {
-    font-size: 15px;
-  }
 }
+
 </style>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Catálogo Brasil Sat</title>
+<div class="categories-wrapper">
+  <div class="categories-title">Categorias</div>
 
-<style>
-body {
-  margin: 0;
-  background: #050d1a;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #ffffff;
+  <div class="categories-carousel">
+
+    <!-- RECEPTORES -->
+    <a href="#" class="category-card" style="background-image:url('IMAGEM_RECEPTORES.jpg')">
+      <div class="category-content">
+        <div class="category-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="7" width="18" height="10" rx="2"/>
+            <path d="M8 3c2 2 2 4 2 4"/>
+            <path d="M16 3c-2 2-2 4-2 4"/>
+          </svg>
+        </div>
+        <div class="category-name">Receptores</div>
+      </div>
+    </a>
+
+    <!-- TV LIVRE -->
+    <a href="#" class="category-card" style="background-image:url('IMAGEM_TV_LIVRE.jpg')">
+      <div class="category-content">
+        <div class="category-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="12" rx="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+          </svg>
+        </div>
+        <div class="category-name">TV Livre</div>
+      </div>
+    </a>
+
+    <!-- TV BOX -->
+    <a href="#" class="category-card" style="background-image:url('IMAGEM_TV_BOX.jpg')">
+      <div class="category-content">
+        <div class="category-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="5" y="7" width="14" height="10" rx="2"/>
+            <circle cx="12" cy="12" r="1.5"/>
+          </svg>
+        </div>
+        <div class="category-name">TV Box</div>
+      </div>
+    </a>
+
+    <!-- ACESSÓRIOS (ANTENA) -->
+    <a href="#" class="category-card" style="background-image:url('IMAGEM_ACESSORIOS.jpg')">
+      <div class="category-content">
+        <div class="category-icon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="14" r="4"/>
+            <path d="M12 2v6"/>
+            <path d="M4 14h16"/>
+          </svg>
+        </div>
+        <div class="category-name">Acessórios</div>
+      </div>
+    </a>
+
+    <!-- IMPORTADOS (PERFUME) -->
+    <a href="#" class="category-card" style="background-image:url('IMAGEM_IMPORTADOS.jpg')">
+      <div class="category-content">
+        <div class="category-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="8" y="4" width="8" height="4"/>
+            <rect x="6" y="8" width="12" height="12" rx="2"/>
+          </svg>
+        </div>
+        <div class="category-name">Importados</div>
+      </div>
+    </a>
+
+    <!-- SEGURANÇA (CÂMERA) -->
+    <a href="#" class="category-card" style="background-image:url('IMAGEM_SEGURANCA.jpg')">
+      <div class="category-content">
+        <div class="category-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="8" width="14" height="8" rx="2"/>
+            <circle cx="17" cy="12" r="2"/>
+            <path d="M21 10v4"/>
+          </svg>
+        </div>
+        <div class="category-name">Equip. Segurança</div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
 }
 
-.catalog-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 32px 16px;
-}
-
-.category {
-  margin-bottom: 48px;
-}
-
-.category-title {
-  font-size: 26px;
-  margin-bottom: 18px;
-}
-
-/* CARROSSEL */
-.carousel {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 12px;
-}
-
-.carousel::-webkit-scrollbar {
-  height: 6px;
-}
-
-.carousel::-webkit-scrollbar-thumb {
-  background: #1e90ff;
-  border-radius: 10px;
-}
-
-/* CARD */
-.product-card {
-  background: linear-gradient(180deg, #0b1f3a, #07172b);
-  border-radius: 18px;
-  width: 260px;
-  flex-shrink: 0;
-  padding: 16px;
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-}
-
-.product-card img {
-  width: 100%;
-  border-radius: 14px;
-  margin-bottom: 12px;
-}
-
-.product-card h3 {
-  font-size: 17px;
-  margin: 6px 0;
-}
-
-.product-card p {
-  font-size: 14px;
-  color: #cfd8ff;
-  margin-bottom: 12px;
-}
-
-.price {
-  font-size: 18px;
-  font-weight: bold;
-  color: #ffd36a;
-  margin-bottom: 14px;
-}
-
-.btn {
-  display: block;
-  text-align: center;
-  padding: 12px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  margin-top: auto;
-  background: linear-gradient(90deg, #0f5fff, #2fa4ff);
-  color: #ffffff;
-}
-
-/* ================== AJUSTE DESKTOP - PRODUTOS ================== */
+/* DESKTOP */
 @media (min-width: 1024px) {
-  .catalog-wrapper {
-    max-width: 1400px;
-  }
-
   .carousel {
     gap: 28px;
   }
@@ -231,10 +212,6 @@ body {
     font-size: 20px;
   }
 }
-</style>
-</head>
 
-<body>
-<!-- SEU HTML DE CATEGORIAS E MAIS VENDIDOS CONTINUA IGUAL -->
-</body>
-</html>
+
+</style>
