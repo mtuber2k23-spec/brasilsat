@@ -192,15 +192,25 @@ body {
   color: #ffffff;
 }
 
-.catalog-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 32px 16px;
+/* ======================================
+   CORREÇÃO DEFINITIVA DE ESPAÇAMENTO
+   (SEM QUEBRAR MOBILE)
+====================================== */
+
+/* DESKTOP REAL */
+@media (min-width: 1024px) {
+
+  .catalog-wrapper {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .category {
+    margin-bottom: 32px; /* reduz vazio no desktop */
+  }
+
 }
 
-.category {
-  margin-bottom: 48px;
-}
 
 .category-title {
   font-size: 26px;
@@ -402,6 +412,7 @@ body {
 
 </body>
 </html>
+
 
 
 
