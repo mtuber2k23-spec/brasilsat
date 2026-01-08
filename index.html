@@ -193,9 +193,11 @@ body {
 }
 
 .catalog-wrapper {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 32px 16px;
+  padding: 24px 16px;
+  overflow: visible;
 }
 
   /* AJUSTE PARA DESKTOP */
@@ -229,8 +231,10 @@ body {
   display: flex;
   gap: 20px;
   overflow-x: auto;
+  overflow-y: visible;
   scroll-snap-type: x mandatory;
-  padding-bottom: 12px;
+  padding-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .carousel::-webkit-scrollbar {
@@ -289,6 +293,23 @@ body {
   background: linear-gradient(90deg, #0f5fff, #2fa4ff);
   color: #ffffff;
 }
+  /* AJUSTES EXCLUSIVOS PARA DESKTOP */
+@media (min-width: 1024px) {
+
+  .catalog-wrapper {
+    padding: 48px 24px;
+  }
+
+  .carousel {
+    padding-bottom: 24px;
+  }
+
+  .category {
+    margin-bottom: 64px;
+  }
+
+}
+
 </style>
 </head>
 
@@ -419,6 +440,7 @@ body {
 
 </body>
 </html>
+
 
 
 
