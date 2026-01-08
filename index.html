@@ -83,6 +83,33 @@
   text-transform: uppercase;
   color: #ffffff;
 }
+  .category-card,
+.product-card {
+  flex: 0 0 auto;
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+/* MOBILE */
+@media (max-width: 1023px) {
+  .category-card,
+  .product-card {
+    width: 80%;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .carousel {
+    justify-content: space-between;
+  }
+
+  .category-card,
+  .product-card {
+    width: calc(20% - 16px);
+  }
+}
+  
 </style>
 
 <div class="categories-wrapper">
@@ -208,49 +235,41 @@ body {
 }
 
 /* CARROSSEL */
-/* =========================
-   BASE – MOBILE FIRST
-========================= */
-
 .carousel {
   display: flex;
   gap: 16px;
+  height: 100%;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: 16px;
+  align-items: stretch;
+  padding-bottom: 8px;
 }
 
 .carousel::-webkit-scrollbar {
   display: none;
 }
 
-.product-card,
-.category-card {
-  flex: 0 0 80%;
-  max-width: 80%;
-  scroll-snap-align: start;
-}
-
-/* =========================
-   DESKTOP – VIRA GRID
+  /* =========================
+   WRAPPER – CONTROLA ALTURA
 ========================= */
 
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* MOBILE */
+@media (max-width: 1023px) {
+  .carousel-wrapper {
+    height: 280px; /* ajuste fino aqui */
+  }
+}
+
+/* DESKTOP */
 @media (min-width: 1024px) {
-
-  .carousel {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 24px;
-    overflow: visible;
-    padding-bottom: 0;
+  .carousel-wrapper {
+    height: 360px; /* ajuste fino aqui */
   }
-
-  .product-card,
-  .category-card {
-    flex: none;
-    max-width: 100%;
-  }
-
 }
 
 /* CARD */
