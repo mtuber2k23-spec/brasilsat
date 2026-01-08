@@ -1,88 +1,50 @@
 <!-- CARROSSEL DE CATEGORIAS - IMAGEM REAL COM OVERLAY -->
 <style>
-.categories-wrapper {
-  max-width: 1200px;
-  margin: 0 auto 48px;
-  padding: 0 16px;
-}
+/* =========================
+   BASE – MOBILE FIRST
+========================= */
 
-.categories-title {
-  font-size: 24px;
-  margin-bottom: 18px;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.categories-carousel {
+.carousel {
   display: flex;
-  gap: 18px;
+  gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: 10px;
+  padding-bottom: 16px;
 }
 
-.categories-carousel::-webkit-scrollbar {
-  height: 6px;
-}
-.categories-carousel::-webkit-scrollbar-thumb {
-  background: #2fa4ff;
-  border-radius: 10px;
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
+.product-card,
 .category-card {
-  position: relative;
-  min-width: 200px;
-  height: 130px;
-  border-radius: 18px;
-  overflow: hidden;
-  text-decoration: none;
+  flex: 0 0 80%;
+  max-width: 80%;
   scroll-snap-align: start;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: flex-end;
-  padding: 16px;
-  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.category-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
+/* =========================
+   DESKTOP – VIRA GRID
+========================= */
+
+@media (min-width: 1024px) {
+
+  .carousel {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .product-card,
+  .category-card {
+    flex: none;
+    max-width: 100%;
+  }
+
 }
 
-.category-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.5);
-}
-
-.category-content {
-  position: relative;
-  z-index: 2;
-}
-
-.category-icon {
-  width: 34px;
-  height: 34px;
-  margin-bottom: 8px;
-}
-
-.category-icon svg {
-  width: 100%;
-  height: 100%;
-  stroke: #2fa4ff;
-  fill: none;
-  stroke-width: 1.8;
-}
-
-.category-name {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #ffffff;
-}
 </style>
 
 <div class="categories-wrapper">
@@ -187,34 +149,15 @@
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #050d1a 0%, #07172b 100%);
+  background: #050d1a;
   font-family: Arial, Helvetica, sans-serif;
   color: #ffffff;
 }
 
 .catalog-wrapper {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 24px 16px;
-  overflow: visible;
-}
-
-  /* AJUSTE PARA DESKTOP */
-@media (min-width: 1024px) {
-
-  .catalog-wrapper {
-    padding: 40px 24px;
-  }
-
-  .category {
-    margin-bottom: 64px;
-  }
-
-  .category-title {
-    font-size: 28px;
-  }
-
+  padding: 32px 16px;
 }
 
 .category {
@@ -231,10 +174,8 @@ body {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  overflow-y: visible;
   scroll-snap-type: x mandatory;
-  padding-bottom: 16px;
-  -webkit-overflow-scrolling: touch;
+  padding-bottom: 12px;
 }
 
 .carousel::-webkit-scrollbar {
@@ -293,23 +234,6 @@ body {
   background: linear-gradient(90deg, #0f5fff, #2fa4ff);
   color: #ffffff;
 }
-  /* AJUSTES EXCLUSIVOS PARA DESKTOP */
-@media (min-width: 1024px) {
-
-  .catalog-wrapper {
-    padding: 48px 24px;
-  }
-
-  .carousel {
-    padding-bottom: 24px;
-  }
-
-  .category {
-    margin-bottom: 64px;
-  }
-
-}
-
 </style>
 </head>
 
@@ -440,9 +364,6 @@ body {
 
 </body>
 </html>
-
-
-
 
 
 
