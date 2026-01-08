@@ -83,33 +83,6 @@
   text-transform: uppercase;
   color: #ffffff;
 }
-  .category-card,
-.product-card {
-  flex: 0 0 auto;
-  height: 100%;
-  scroll-snap-align: start;
-}
-
-/* MOBILE */
-@media (max-width: 1023px) {
-  .category-card,
-  .product-card {
-    width: 80%;
-  }
-}
-
-/* DESKTOP */
-@media (min-width: 1024px) {
-  .carousel {
-    justify-content: space-between;
-  }
-
-  .category-card,
-  .product-card {
-    width: calc(20% - 16px);
-  }
-}
-  
 </style>
 
 <div class="categories-wrapper">
@@ -237,39 +210,19 @@ body {
 /* CARROSSEL */
 .carousel {
   display: flex;
-  gap: 16px;
-  height: 100%;
+  gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  align-items: stretch;
-  padding-bottom: 8px;
+  padding-bottom: 12px;
 }
 
 .carousel::-webkit-scrollbar {
-  display: none;
+  height: 6px;
 }
 
-  /* =========================
-   WRAPPER – CONTROLA ALTURA
-========================= */
-
-.carousel-wrapper {
-  width: 100%;
-  overflow: hidden;
-}
-
-/* MOBILE */
-@media (max-width: 1023px) {
-  .carousel-wrapper {
-    height: 280px; /* ajuste fino aqui */
-  }
-}
-
-/* DESKTOP */
-@media (min-width: 1024px) {
-  .carousel-wrapper {
-    height: 360px; /* ajuste fino aqui */
-  }
+.carousel::-webkit-scrollbar-thumb {
+  background: #1e90ff;
+  border-radius: 10px;
 }
 
 /* CARD */
@@ -329,8 +282,7 @@ body {
   <!-- MAIS VENDIDOS -->
   <div class="category">
     <div class="category-title">🔥 Mais Vendidos</div>
-    
-<div class="carousel-wrapper">
+
     <div class="carousel">
 
       <!-- PRODUTO 1 -->
@@ -343,11 +295,7 @@ body {
           Falar no WhatsApp
         </a>
       </div>
-</div>
 
-  <div class="carousel-wrapper">
-    <div class="carousel">
-      
       <!-- PRODUTO 2 -->
       <div class="product-card">
         <img src="IMAGEM_2" alt="Produto 2">
@@ -358,11 +306,7 @@ body {
           Falar no WhatsApp
         </a>
       </div>
-</div>
 
-<div class="carousel-wrapper">
-    <div class="carousel">
-      
       <!-- PRODUTO 3 -->
       <div class="product-card">
         <img src="IMAGEM_3" alt="Produto 3">
@@ -373,11 +317,7 @@ body {
           Falar no WhatsApp
         </a>
       </div>
-</div>
-  
-  <div class="carousel-wrapper">
-    <div class="carousel">
-      
+
       <!-- PRODUTO 4 -->
       <div class="product-card">
         <img src="IMAGEM_4" alt="Produto 4">
@@ -388,11 +328,7 @@ body {
           Falar no WhatsApp
         </a>
       </div>
-</div>
 
-<div class="carousel-wrapper">
-    <div class="carousel">
-      
       <!-- PRODUTO 5 -->
       <div class="product-card">
         <img src="IMAGEM_5" alt="Produto 5">
@@ -403,11 +339,7 @@ body {
           Falar no WhatsApp
         </a>
       </div>
-</div>
 
-  <div class="carousel-wrapper">
-    <div class="carousel">
-      
       <!-- PRODUTO 6 -->
       <div class="product-card">
         <img src="IMAGEM_6" alt="Produto 6">
@@ -418,11 +350,7 @@ body {
           Falar no WhatsApp
         </a>
       </div>
-</div>
 
-  <div class="carousel-wrapper">
-    <div class="carousel">
-      
       <!-- PRODUTO 7 -->
       <div class="product-card">
         <img src="IMAGEM_7" alt="Produto 7">
@@ -433,11 +361,7 @@ body {
           Falar no WhatsApp
         </a>
       </div>
-</div>
 
-  <div class="carousel-wrapper">
-    <div class="carousel">
-      
       <!-- PRODUTO 8 -->
       <div class="product-card">
         <img src="IMAGEM_8" alt="Produto 8">
@@ -448,11 +372,7 @@ body {
           Falar no WhatsApp
         </a>
       </div>
-</div>
 
-  <div class="carousel-wrapper">
-    <div class="carousel">
-      
       <!-- PRODUTO 9 -->
       <div class="product-card">
         <img src="IMAGEM_9" alt="Produto 9">
@@ -463,11 +383,7 @@ body {
           Falar no WhatsApp
         </a>
       </div>
-</div>
 
-  <div class="carousel-wrapper">
-    <div class="carousel">
-      
       <!-- PRODUTO 10 -->
       <div class="product-card">
         <img src="IMAGEM_10" alt="Produto 10">
@@ -478,8 +394,7 @@ body {
           Falar no WhatsApp
         </a>
       </div>
-</div>
-    
+
     </div>
   </div>
 
@@ -487,7 +402,6 @@ body {
 
 </body>
 </html>
-
 
 
 
