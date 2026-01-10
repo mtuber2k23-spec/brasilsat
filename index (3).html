@@ -1,5 +1,45 @@
 <!-- CARROSSEL DE CATEGORIAS - IMAGEM REAL COM OVERLAY -->
 <style>
+.hero-banner {
+  width: 100%;
+  height: 260px;
+  background-image: url('banner-brasil-sat.jpg'); /* SUA IMAGEM */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-logo {
+  max-width: 260px;
+  width: 70%;
+}
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 200px;
+  }
+  .hero-logo {
+    max-width: 200px;
+  }
+}
+</style>
+
 .categories-wrapper {
   max-width: 1200px;
   margin: 0 auto 48px;
@@ -84,6 +124,16 @@
   color: #ffffff;
 }
 </style>
+
+<body>
+
+  <!-- BANNER TOPO / LOGOMARCA -->
+  <div class="hero-banner">
+    <div class="hero-content">
+      <img src="logo-brasil-sat.png" alt="Brasil Sat" class="hero-logo">
+    </div>
+  </div>
+
 
 <div class="categories-wrapper">
   <div class="categories-title">Categorias</div>
@@ -533,6 +583,7 @@ body {
 
 </body>
 </html>
+
 
 
 
