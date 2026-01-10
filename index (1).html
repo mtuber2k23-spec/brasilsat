@@ -1,95 +1,201 @@
-<!-- CARROSSEL DE CATEGORIAS - IMAGEM REAL COM OVERLAY -->
-<style>
-  .banner-topo img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasil Sat</title>
 
-.categories-wrapper {
-  max-width: 1200px;
-  margin: 0 auto 48px;
-  padding: 0 16px;
-}
+  <style>
+    /* RESET BÁSICO */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-.categories-title {
-  font-size: 24px;
-  margin-bottom: 18px;
-  color: #ffffff;
-  font-weight: 600;
-}
+    body {
+      background: #0e1117;
+      color: #ffffff;
+    }
 
-.categories-carousel {
-  display: flex;
-  gap: 18px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 10px;
-}
+    /* =======================
+       BANNER TOPO
+    ======================= */
+    .banner-topo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-.categories-carousel::-webkit-scrollbar {
-  height: 6px;
-}
-.categories-carousel::-webkit-scrollbar-thumb {
-  background: #2fa4ff;
-  border-radius: 10px;
-}
+    /* =======================
+       CATEGORIAS
+    ======================= */
+    .categories-wrapper {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
 
-.category-card {
-  position: relative;
-  min-width: 200px;
-  height: 130px;
-  border-radius: 18px;
-  overflow: hidden;
-  text-decoration: none;
-  scroll-snap-align: start;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: flex-end;
-  padding: 16px;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
+    .categories-title {
+      font-size: 24px;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
 
-.category-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-}
+    .categories-carousel {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 10px;
+    }
 
-.category-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.5);
-}
+    .categories-carousel::-webkit-scrollbar {
+      height: 6px;
+    }
 
-.category-content {
-  position: relative;
-  z-index: 2;
-}
+    .categories-carousel::-webkit-scrollbar-thumb {
+      background: #2fa4ff;
+      border-radius: 10px;
+    }
 
-.category-icon {
-  width: 34px;
-  height: 34px;
-  margin-bottom: 8px;
-}
+    .category-card {
+      position: relative;
+      min-width: 200px;
+      height: 130px;
+      border-radius: 18px;
+      overflow: hidden;
+      text-decoration: none;
+      scroll-snap-align: start;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
 
-.category-icon svg {
-  width: 100%;
-  height: 100%;
-  stroke: #2fa4ff;
-  fill: none;
-  stroke-width: 1.8;
-}
+    .category-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
 
-.category-name {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-</style>
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.5);
+    }
+
+    .category-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .category-icon {
+      width: 34px;
+      height: 34px;
+      margin-bottom: 8px;
+    }
+
+    .category-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: #2fa4ff;
+      fill: none;
+      stroke-width: 1.8;
+    }
+
+    .category-name {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* =======================
+       MAIS VENDIDOS
+    ======================= */
+    .catalog-wrapper {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 16px;
+    }
+
+    .category-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .carousel {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    .product-card {
+      min-width: 240px;
+      background: #161b22;
+      border-radius: 20px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 12px;
+    }
+
+    .product-card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .product-card p {
+      font-size: 14px;
+      opacity: 0.8;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      text-align: center;
+      padding: 12px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      background: linear-gradient(90deg, #0f5fff, #2fa4ff);
+      color: #ffffff;
+      margin-top: auto;
+    }
+
+    /* =======================
+       RESPONSIVO
+    ======================= */
+    @media (min-width: 1024px) {
+      .categories-carousel,
+      .carousel {
+        overflow-x: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BANNER -->
+  <div class="banner-topo">
+    <img src="banner.jpg" alt="Banner Brasil Sat">
+  </div>
 
 <div class="categories-wrapper">
   <div class="categories-title">Categorias</div>
@@ -643,6 +749,7 @@ body {
 
 </body>
 </html>
+
 
 
 
